@@ -3,13 +3,31 @@ Treehouse FSJS Techdegree:
 project 1 - A Random Quote Generator
 ******************************************/
 
-// For assistance: 
-  // Check the "Project Resources" section of the project instructions
-  // Reach out in your Slack community - https://treehouse-fsjs-102.slack.com/app_redirect?channel=chit-chat
-
 /*** 
  * `quotes` array 
 ***/
+
+let quotes = [
+  {
+    quote: "I won't be a rock star. I will be a legend", 
+    source: "Freddie Mercury"},
+  {
+    quote: "We are here to laugh at the odds and live our lives so well that death will tremble to take us",
+    source: "Charles Bukowski"
+  },
+  {
+    quote: "We're all stories in the end, just make it a good one.",
+    source: "The 11th Doctor",
+    citation: "Doctor Who: The angels take Manhattan",
+    year: "2012"
+  },
+  {
+    quote: "",
+
+  }
+
+
+]
 
 
 
