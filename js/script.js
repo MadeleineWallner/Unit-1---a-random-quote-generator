@@ -22,12 +22,19 @@ let quotes = [
     year: "2012"
   },
   {
-    quote: "",
-
-  }
-
-
+    quote: "Show a little faith, there's magic in the night",
+    source: "Bruce Springsteen",
+    citation: "Thunder road",
+    year: "1975"
+  },
+  {
+    quote: "What is life without a little risk?",
+    source: "Sirius Black",
+    citation: "Harry Potter and The order of the Phoenix",
+    year: "2007"
+  },
 ]
+console.log(quotes);
 
 
 
