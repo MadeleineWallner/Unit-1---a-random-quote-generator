@@ -41,8 +41,17 @@ console.log(quotes);
 /***
  * `getRandomQuote` function
 ***/
+function getRandomQuote () {
+  Math.floor(Math.random() * quotes.length);
+  return getRandomQuote;
 
+}
 
+function printQuote () {
+  let i = getRandomQuote;
+  let j = document.getElementById('load-quote').addEventListener("click", printQuote, false);
+
+}
 
 /***
  * `printQuote` function
