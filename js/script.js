@@ -47,17 +47,18 @@ function getRandomQuote () {
 
 }
 
-function printQuote () {
-  let i = getRandomQuote;
-  let j = document.getElementById('load-quote').addEventListener("click", printQuote, false);
 
-}
 
 /***
  * `printQuote` function
 ***/
 
-
+function printQuote () {
+  let i = getRandomQuote;
+  let j = document.getElementById('load-quote').addEventListener("click", printQuote, false);
+  
+  if (quotes )
+}
 
 /***
  * click event listener for the print quote button
