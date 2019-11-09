@@ -2,11 +2,6 @@
 Treehouse FSJS Techdegree:
 project 1 - A Random Quote Generator
 ******************************************/
-
-/*** 
- * `quotes` array 
-***/
-
 let quotes = [
   {
     quote: "I won't be a rock star. I will be a legend", 
@@ -42,23 +37,19 @@ console.log(quotes);
  * `getRandomQuote` function
 ***/
 function getRandomQuote () {
-  Math.floor(Math.random() * quotes.length);
-  return getRandomQuote;
+  let randomQuote = quotes[Math.floor(Math.random() * quotes.length + 1)];
+  return randomQuote;
+  
 
 }
 
-
+console.log(getRandomQuote);
 
 /***
  * `printQuote` function
 ***/
 
-function printQuote () {
-  let i = getRandomQuote;
-  let j = document.getElementById('load-quote').addEventListener("click", printQuote, false);
-  
-  if (quotes )
-}
+
 
 /***
  * click event listener for the print quote button
