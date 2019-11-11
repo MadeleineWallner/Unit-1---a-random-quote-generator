@@ -2,7 +2,7 @@
 Treehouse FSJS Techdegree:
 project 1 - A Random Quote Generator
 ******************************************/
-let quotes = [
+var quotes = [
   {
     quote: "I won't be a rock star. I will be a legend", 
     source: "Freddie Mercury"},
@@ -36,18 +36,37 @@ console.log(quotes);
 /***
  * `getRandomQuote` function
 ***/
-function getRandomQuote () {
-  let randomQuote = quotes[Math.floor(Math.random() * quotes.length + 1)];
-  return randomQuote;
-  
 
+function getRandomQuote() {
+  var randomQuote = Math.floor(Math.random() * quotes.length);
+  return quotes[randomQuote];
 }
 
-console.log(getRandomQuote);
+console.log(getRandomQuote());
 
 /***
  * `printQuote` function
 ***/
+
+function printQuote()
+{
+  var i = getRandomQuote();
+  var html = "";
+  html += '<p class="quote">' + i.quote + '</p>'
+  html += '<p class="source">' + i.source
+
+   if (i.citation) {
+    html += '<span class="citation">' + i.citation + '</span>'
+   }
+
+  if (i.year) {
+    html += '<span class = "year">' + i.year + '</span>'
+    '</p>'
+
+  }
+  document.getElementById("quote-box").innerHTML = html;
+ 
+}
 
 
 
