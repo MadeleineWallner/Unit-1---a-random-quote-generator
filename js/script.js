@@ -2,12 +2,16 @@
 Treehouse FSJS Techdegree:
 project 1 - A Random Quote Generator
 ******************************************/
+
+//Created an array with objects
 var quotes = [
   {
-    quote: "I won't be a rock star. I will be a legend", 
-    source: "Freddie Mercury"},
+    quote: "I won't be a rock star. I will be a legend.", 
+    source: "Freddie Mercury, ",
+    category: "Music"
+  },
   {
-    quote: "We are here to laugh at the odds and live our lives so well that death will tremble to take us",
+    quote: "We are here to laugh at the odds and live our lives so well that death will tremble to take us.",
     source: "Charles Bukowski"
   },
   {
@@ -17,58 +21,98 @@ var quotes = [
     year: "2012"
   },
   {
-    quote: "Show a little faith, there's magic in the night",
+    quote: "Show a little faith, there's magic in the night.",
     source: "Bruce Springsteen",
     citation: "Thunder road",
-    year: "1975"
+    year: "1975, ",
+    category: "Music"
   },
   {
     quote: "What is life without a little risk?",
     source: "Sirius Black",
     citation: "Harry Potter and The order of the Phoenix",
-    year: "2007"
+    year: "2007, ",
+    category: "Movies"
   },
-]
+  {
+    quote: "You can neither win nor lose if you don't run the race.",
+    source: "David Bowie"
+  },
+  {
+    quote: "If you're not doing what you love, you're just wasting your time.",
+    source: "Billy Joel",
+    year: "2015"
+  },
+  {
+    quote: "To live is the rarest thing in the world. Most people exist, that is all.",
+    source: "Oscar Wilde",
+    citation: "The soul of a man under socialism",
+    year: "1891",
+  }
+
+];
+//Testing the quotes array
 console.log(quotes);
 
-
-
-/***
- * `getRandomQuote` function
-***/
+/*function to create a random number between 0 and the length of the array 
+and return a random quote from the quotes array*/
 
 function getRandomQuote() {
   var randomQuote = Math.floor(Math.random() * quotes.length);
   return quotes[randomQuote];
 }
-
+//Testing the getRandomQuote function
 console.log(getRandomQuote());
 
-/***
- * `printQuote` function
-***/
+//variable to store different colors
+var colors = ["#727171", "#754141", "#1D5B1D", "#8a738c", "#57A4A4", "#8E85DC", "#ffcc99"];
+
+//function to generate a random background color
+function getRandomColor() {
+  var randomColor = Math.floor(Math.random() * colors.length);
+  document.body.style.backgroundColor = colors[randomColor];
+}
+
+
+/*Function to display the quotes. 
+Created a variable to store the getRandomQuote function.
+Created another variable to store the html string with the "quote" and "source" properties.
+If statement to add "citation" and "year" if they exist in the random quote
+If statement to add "category" if it exist in the quote
+Added the getRandomColor function to get the background color to change with the quotes.
+*/
 
 function printQuote()
 {
   var i = getRandomQuote();
-  var html = "";
+  var html = " ";
   html += '<p class="quote">' + i.quote + '</p>'
   html += '<p class="source">' + i.source
 
-   if (i.citation) {
+   if (i.hasOwnProperty("citation")) {
     html += '<span class="citation">' + i.citation + '</span>'
    }
 
-  if (i.year) {
-    html += '<span class = "year">' + i.year + '</span>'
-    '</p>'
-
+  if (i.hasOwnProperty("year")) {
+    html += '<span class = "year">' + i.year + '</span>' 
   }
-  document.getElementById("quote-box").innerHTML = html;
- 
+
+  if (i.hasOwnProperty("category")) {
+    html += '<span class = "category">' + i.category + '</span>'
+  }
+  '</p>'
+
+  document.body.style.backgroundColor = getRandomColor();
+
+  //Set innerHTML to the html string above
+  document.getElementById("quote-box").innerHTML = html;  
+
+  
 }
 
 
+//setInterval to change quote every 5 seconds
+setInterval(printQuote,5000);
 
 /***
  * click event listener for the print quote button
