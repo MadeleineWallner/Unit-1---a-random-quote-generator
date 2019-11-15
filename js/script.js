@@ -55,7 +55,7 @@ var quotes = [
 console.log(quotes);
 
 /*function to create a random number between 0 and the length of the array 
-and return a random quote from the quotes array*/
+and return a random object from the quotes array*/
 
 function getRandomQuote() {
   var randomQuote = Math.floor(Math.random() * quotes.length);
@@ -79,7 +79,6 @@ Created a variable to store the getRandomQuote function.
 Created another variable to store the html string with the "quote" and "source" properties.
 If statement to add "citation" and "year" if they exist in the random quote
 If statement to add "category" if it exist in the quote
-Added the getRandomColor function to get the background color to change with the quotes.
 */
 
 function printQuote()
@@ -102,6 +101,7 @@ function printQuote()
   }
   '</p>'
 
+  //Added the getRandomColor function to get the background color to change with the quotes.
   document.body.style.backgroundColor = getRandomColor();
 
   //Set innerHTML to the html string above
