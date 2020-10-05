@@ -3,7 +3,7 @@ Treehouse FSJS Techdegree:
 project 1 - A Random Quote Generator
 ******************************************/
 
-//Created an array with objects
+//array with objects
 var quotes = [
   {
     quote: "I won't be a rock star. I will be a legend.", 
@@ -51,8 +51,6 @@ var quotes = [
   }
 
 ];
-//Testing the quotes array
-console.log(quotes);
 
 /*function to create a random number between 0 and the length of the array 
 and return a random object from the quotes array*/
@@ -61,11 +59,9 @@ function getRandomQuote() {
   var randomQuote = Math.floor(Math.random() * quotes.length);
   return quotes[randomQuote];
 }
-//Testing the getRandomQuote function
-console.log(getRandomQuote());
 
-//variable to store different colors
-var colors = ["#727171", "#754141", "#1D5B1D", "#8a738c", "#57A4A4", "#8E85DC", "#ffcc99"];
+//variable to store different background colors
+var colors = ["#727171", "#754141", "#1D5B1D", "#8a738c", "#57A4A4", "#8E85DC", "#949379"];
 
 //function to generate a random background color
 function getRandomColor() {
@@ -75,29 +71,28 @@ function getRandomColor() {
 
 
 /*Function to display the quotes. 
-Created a variable to store the getRandomQuote function.
-Created another variable to store the html string with the "quote" and "source" properties.
+variable to store the getRandomQuote function.
+variable to store the html string with the "quote" and "source" properties.
 If statement to add "citation" and "year" if they exist in the random quote
 If statement to add "category" if it exist in the quote
 */
 
-function printQuote()
-{
-  var i = getRandomQuote();
+function printQuote(){
+  var quote = getRandomQuote();
   var html = " ";
-  html += '<p class="quote">' + i.quote + '</p>'
-  html += '<p class="source">' + i.source
+  html += '<p class="quote">' + quote.quote + '</p>'
+  html += '<p class="source">' + quote.source
 
-   if (i.hasOwnProperty("citation")) {
-    html += '<span class="citation">' + i.citation + '</span>'
+   if (quote.hasOwnProperty("citation")) {
+    html += '<span class="citation">' + quote.citation + '</span>'
    }
 
-  if (i.hasOwnProperty("year")) {
-    html += '<span class = "year">' + i.year + '</span>' 
+  if (quote.hasOwnProperty("year")) {
+    html += '<span class = "year">' + quote.year + '</span>' 
   }
 
-  if (i.hasOwnProperty("category")) {
-    html += '<span class = "category">' + i.category + '</span>'
+  if (quote.hasOwnProperty("category")) {
+    html += '<span class = "category">' + quote.category + '</span>'
   }
   '</p>'
 
@@ -106,13 +101,13 @@ function printQuote()
 
   //Set innerHTML to the html string above
   document.getElementById("quote-box").innerHTML = html;  
-
-  
 }
 
 
 //setInterval to change quote every 5 seconds
 setInterval(printQuote,5000);
+
+
 
 /***
  * click event listener for the print quote button
