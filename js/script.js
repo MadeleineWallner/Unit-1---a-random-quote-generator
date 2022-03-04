@@ -110,9 +110,8 @@ setInterval(printQuote,5000);
 
 
 
-/***
- * click event listener for the print quote button
- * DO NOT CHANGE THE OF CODE BELOW!!
-***/
+
+// click event listener for the print quote button
+
 
 document.getElementById('load-quote').addEventListener("click", printQuote, false);
