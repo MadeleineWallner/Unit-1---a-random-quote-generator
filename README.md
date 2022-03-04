@@ -1,2 +1,3 @@
-# a-random-quote-generator
- A random quote generator
+Random quote generator
+
+My first project at teamtreehouse.com
