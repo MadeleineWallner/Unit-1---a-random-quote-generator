@@ -70,11 +70,10 @@ function getRandomColor() {
 }
 
 
-/*Function to display the quotes. 
+/*
+Function to display the quotes. 
 variable to store the getRandomQuote function.
 variable to store the html string with the "quote" and "source" properties.
-If statement to add "citation" and "year" if they exist in the random quote
-If statement to add "category" if it exist in the quote
 */
 
 function printQuote(){
@@ -83,6 +82,8 @@ function printQuote(){
   html += '<p class="quote">' + quote.quote + '</p>'
   html += '<p class="source">' + quote.source
 
+// add "citation", "year" and "category" if they exist in the random quote
+  
    if (quote.hasOwnProperty("citation")) {
     html += '<span class="citation">' + quote.citation + '</span>'
    }
